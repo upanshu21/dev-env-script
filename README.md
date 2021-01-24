@@ -2,13 +2,15 @@
 
 This is a shell script to quickly setup the java development environment for a new user or for a new linux machine. 
 This script has been tested for ubuntu versions 18 and 20.
+The skip provides option of skip installation for a particluar tool.
 
 ## Tools available
 
 - openJDK 8 
 - maven(latest version)
-- IntelliJ
 - git 
+- VScode
+- IntelliJ
 - Docker 
 
 ## Prerequisites
