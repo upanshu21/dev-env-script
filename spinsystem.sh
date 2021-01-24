@@ -9,10 +9,12 @@ echo "================= Docker ======================"
 
 sleep 1
 
-echo "=============================Installation process for git============================="
+echo
+echo
+echo "=============================Installation process for openJDK============================="
 
 ##Installation process for openJDK
-read -p "continue installing openJDK 8? [y/n]" ANSWER
+read -p "continue installing openJDK 8? [y/n]  " ANSWER
 
 case "$ANSWER" in
     [yY] )
@@ -30,10 +32,12 @@ case "$ANSWER" in
 esac
 sleep 1
 
+echo
+echo
 echo "=============================Installation process for maven============================="
 
 #Installation process for maven
-read -p "continue installing maven? [y/n]" ANSWER
+read -p "continue installing maven? [y/n]  " ANSWER
 
 case "$ANSWER" in
     [yY] )
@@ -50,10 +54,12 @@ case "$ANSWER" in
 esac 
 sleep 1
 
+echo
+echo
 echo "=============================Installation process for IntelliJ============================="
 
 #Installation process for IntelliJ
-read -p "continue installing IntelliJ? [y/n]" ANSWER
+read -p "continue installing IntelliJ? [y/n]  " ANSWER
 
 case "$ANSWER" in
     [yY] )
@@ -77,10 +83,12 @@ case "$ANSWER" in
 esac 
 sleep 1
 
-echo "=============================Installation process for openJDK============================="
+echo
+echo
+echo "=============================Installation process for git============================="
 
 ##Installation process for git
-read -p "continue installing git ? [y/n]" ANSWER
+read -p "continue installing git ? [y/n]  " ANSWER
 
 case "$ANSWER" in
     [yY] )
@@ -91,9 +99,9 @@ case "$ANSWER" in
 
         if [ $CONFIG == "y" ]
         then
-            read -p "enter your git username" username
+            read -p "enter your git username: " username
             git config --global user.name "$username"
-            read -p "enter your git email" email
+            read -p "enter your git email: " email
             git config --global user.email "$email"
         else
             echo "Skipping configuration"
@@ -108,10 +116,12 @@ case "$ANSWER" in
 esac
 sleep 1
 
+echo
+echo
 echo "=============================Installation process for Docker============================="
 
 #Intallation process for Docker
-read -p "continue installing Docker? [y/n]" ANSWER
+read -p "continue installing Docker? [y/n] " ANSWER
 
 case "$ANSWER" in
     [yY] )
