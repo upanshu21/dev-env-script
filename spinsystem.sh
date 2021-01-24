@@ -112,7 +112,7 @@ case "$ANSWER" in
         echo "Skipping installation for open git"
         ;;
     *)
-    echo "Please enter a valid input: y or n/N"
+    echo "Please enter a valid input: y/Y or n/N"
     ;;
 esac
 sleep 1
