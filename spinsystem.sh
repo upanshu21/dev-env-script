@@ -9,7 +9,7 @@ echo "================= Docker ======================"
 
 sleep 1
 
-echo "=============================Installation process for openJDK============================="
+echo "=============================Installation process for git============================="
 
 ##Installation process for openJDK
 read -p "continue installing openJDK 8? [y/n]" ANSWER
