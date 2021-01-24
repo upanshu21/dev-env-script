@@ -63,7 +63,7 @@ read -p "continue installing IntelliJ? [y/n]  " ANSWER
 
 case "$ANSWER" in
     [yY] )
-        read -p "Do you want to install IntelliJ 'community' or 'ultimate' version? [c/u]" VERSION
+        read -p "Do you want to install IntelliJ 'community' or 'ultimate' version? [c/u]  " VERSION
         if [ $VERSION == "c" ]
         then 
             echo "Installing IntelliJ community version...."
@@ -72,7 +72,7 @@ case "$ANSWER" in
             echo "Installing IntelliJ Ultimate version....."
             sudo snap install intellij-idea-ultimate --classic
         fi
-        echo "latest version of IntelliJ $VERSION installed"
+        echo "latest version of IntelliJ installed"
         ;;
     [nN] )
         echo "Skipping installation for IntelliJ"  
@@ -93,9 +93,10 @@ read -p "continue installing git ? [y/n]  " ANSWER
 case "$ANSWER" in
     [yY] )
         echo "Installing git.............."
+        sudo apt update
         sudo apt install git
         echo "Configuring git for your system........"
-        read -p "continue configuring git ? [y/n]" CONFIG
+        read -p "continue configuring git ? [y/n]  " CONFIG
 
         if [ $CONFIG == "y" ]
         then
@@ -111,7 +112,7 @@ case "$ANSWER" in
         echo "Skipping installation for open git"
         ;;
     *)
-    echo "Please enter a valid input: y/Y or n/N"
+    echo "Please enter a valid input: y or n/N"
     ;;
 esac
 sleep 1
