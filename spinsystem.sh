@@ -9,6 +9,8 @@ echo "================= Docker ======================"
 
 sleep 1
 
+echo "=============================Installation process for openJDK============================="
+
 ##Installation process for openJDK
 read -p "continue installing openJDK 8? [y/n]" ANSWER
 
@@ -75,6 +77,37 @@ case "$ANSWER" in
 esac 
 sleep 1
 
+echo "=============================Installation process for openJDK============================="
+
+##Installation process for git
+read -p "continue installing git ? [y/n]" ANSWER
+
+case "$ANSWER" in
+    [yY] )
+        echo "Installing git.............."
+        sudo apt install git
+        echo "Configuring git for your system........"
+        read -p "continue configuring git ? [y/n]" CONFIG
+
+        if [ $CONFIG == "y" ]
+        then
+            read -p "enter your git username" username
+            git config --global user.name "$username"
+            read -p "enter your git email" email
+            git config --global user.email "$email"
+        else
+            echo "Skipping configuration"
+        fi
+        ;;
+    [nN] )
+        echo "Skipping installation for open git"
+        ;;
+    *)
+    echo "Please enter a valid input: y/Y or n/N"
+    ;;
+esac
+sleep 1
+
 echo "=============================Installation process for Docker============================="
 
 #Intallation process for Docker
@@ -92,12 +125,8 @@ case "$ANSWER" in
         sudo apt-cache policy docker-ce
         sudo apt install docker-ce
         echo "latest version of Docker installed"
-        echo "Adding doceker as a non-root user"
         sleep 1
-        sudo groupadd docker
-        sudo usermod -aG docker $USER
-        sudo newgrp docker 
-        echo "Restart your terminal for the changes to take effect"
+        echo "docker is not added as root. Add sudo before all docker commands"
         ;;
     [nN] )
         echo "Skipping installation for Docker"  
